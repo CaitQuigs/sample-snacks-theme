@@ -350,6 +350,7 @@ $colorBody: {{ settings.color_body_bg }};
 $colorProductBackground: {{ settings.color_product_background }};
 $colorInputBg: {{ settings.color_input }};
 $colorNewsletter: {{ settings.color_newsletter }};
+$colorFooter: #256220;
 
 // Border colors
 $colorBorder: {{ settings.color_borders }};
@@ -2110,6 +2111,8 @@ $socialIconFontStack: 'icons';
 /*================ Module | Footer ================*/
 .site-footer {
   padding-bottom: $gutter;
+  background-color: $colorFooter;
+  color: $colorBtnPrimaryText;
 
   @include at-query($max, $small) {
     .grid__item {
