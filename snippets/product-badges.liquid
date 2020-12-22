@@ -1,0 +1,33 @@
+<!-- snippets/product-badges.liquid -->
+
+{% comment %}
+    This snippet adds the badges to each product to identify if the product is certified as organic, natural, vegan, lactose-free or gluten-free.
+    Currently, the badges display based on product tags.  In the future, there will be product settings added to toggle these badges.
+{% endcomment %}
+
+<div class="product-badges">
+    {% if product.tags contains "all natural" %}
+        <div class="product-badge-image">
+        {% assign image = images['all_natural_logo.jpg'] %}
+            <img src="{{ image }}" alt="{{ image.alt }}" />>
+        </div>
+    {% endif %}
+    {% if product.tags contains "organic" %}
+        <div class="product-badge-image">
+        {% assign image = images['usda_organic_logo.jpg'] %}
+            <img src="{{ image }}" alt="{{ image.alt }}" />>
+        </div>
+    {% endif %}
+    {% if product.tags contains "vegan" %}
+        <div class="product-badge-image">
+        {% assign image = images['vegan_logo.jpg'] %}
+            <img src="{{ image }}" alt="{{ image.alt }}" />>
+        </div>
+    {% endif %}
+    {% if product.tags contains "gluten free" %}
+        <div class="product-badge-image">
+        {% assign image = images['gluten_free_logo.jpg'] %}
+            <img src="{{ image }}" alt="{{ image.alt }}" />>
+        </div>
+    {% endif %}
+</div>
