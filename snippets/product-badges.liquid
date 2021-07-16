@@ -6,28 +6,30 @@
 {% endcomment %}
 
 <div class="product-badges">
-    {% if product.tags contains "all natural" %}
-        <div class="product-badge-image">
-        {% assign image = images['all_natural_logo.jpg'] %}
-            <img src="{{ image }}" alt="{{ image.alt }}" />>
-        </div>
-    {% endif %}
-    {% if product.tags contains "organic" %}
-        <div class="product-badge-image">
-        {% assign image = images['usda_organic_logo.jpg'] %}
-            <img src="{{ image }}" alt="{{ image.alt }}" />>
-        </div>
-    {% endif %}
-    {% if product.tags contains "vegan" %}
-        <div class="product-badge-image">
-        {% assign image = images['vegan_logo.jpg'] %}
-            <img src="{{ image }}" alt="{{ image.alt }}" />>
-        </div>
-    {% endif %}
-    {% if product.tags contains "gluten free" %}
-        <div class="product-badge-image">
-        {% assign image = images['gluten_free_logo.jpg'] %}
-            <img src="{{ image }}" alt="{{ image.alt }}" />>
-        </div>
-    {% endif %}
+    {% for tag in product.tags %}
+        {% if tag contains "all natural" %}
+            <div class="product-badge-image">
+            {% assign image = images['all_natural_logo.jpg'] %}
+                <img src="{{ image }}" alt="{{ image.alt }}" />
+            </div>
+        {% endif %}
+        {% if tag contains "organic" %}
+            <div class="product-badge-image">
+            {% assign image = images['usda_organic_logo.jpg'] %}
+                <img src="{{ image }}" alt="{{ image.alt }}" />
+            </div>
+        {% endif %}
+        {% if tag contains "vegan" %}
+            <div class="product-badge-image">
+            {% assign image = images['vegan_logo.jpg'] %}
+                <img src="{{ image }}" alt="{{ image.alt }}" />
+            </div>
+        {% endif %}
+        {% if tag contains "gluten free" %}
+            <div class="product-badge-image">
+            {% assign image = images['gluten_free_logo.jpg'] %}
+                <img src="{{ image }}" alt="{{ image.alt }}" />
+            </div>
+        {% endif %}
+    {% endfor %}
 </div>
